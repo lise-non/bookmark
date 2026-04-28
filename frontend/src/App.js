@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Modal from "react-modal";
+import Recomendations from "./Recomendations";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -132,7 +133,14 @@ function App() {
                 </div>
               </form>
               <div>
-                <button onClick={() => { handleEditBook(book.id); setSelectedBookId(null); }}>Edit</button>{" "}
+                <button
+                  onClick={() => {
+                    handleEditBook(book.id);
+                    setSelectedBookId(null);
+                  }}
+                >
+                  Edit
+                </button>{" "}
                 <button onClick={() => setSelectedBookId(null)}>Cancel</button>
               </div>
             </Modal>
@@ -187,6 +195,8 @@ function App() {
           Add Book
         </button>
       </form>
+
+      <Recomendations />
     </div>
   );
 }

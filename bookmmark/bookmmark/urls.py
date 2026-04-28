@@ -26,5 +26,6 @@ router.register(r'reading-sessions', views.ReadingSessionViewSet, basename='read
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('about/', views.about)
+    path('about/', views.about),
+    path("api/recommendations/", views.recommendations_view, name="recommendations")
 ]
